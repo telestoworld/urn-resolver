@@ -16,7 +16,7 @@ export namespace LandUtils {
   }
 
   //
-  // LAND Getters
+  // SPACE Getters
   //
 
   const clearLow = B("0xffffffffffffffffffffffffffffffff00000000000000000000000000000000")

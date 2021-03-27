@@ -3,7 +3,7 @@
  */
 
 export type BaseBlockchainAsset = {
-  namespace: 'decentraland'
+  namespace: 'telestoworld'
   uri: URL
   /**
    * Ethereum for the time being.
@@ -42,7 +42,7 @@ export type BlockchainLandAsset = BlockchainAsset & {
  * @public
  */
 export type BlockchainCollectionV1Asset =  {
-  namespace: 'decentraland'
+  namespace: 'telestoworld'
   uri: URL
   /**
    * Ethereum for the time being.
@@ -69,7 +69,7 @@ export type BlockchainCollectionV1Asset =  {
  * @public
  */
 export type BlockchainCollectionV2Asset = BaseBlockchainAsset & {
-  namespace: 'decentraland'
+  namespace: 'telestoworld'
   type: "blockchain-collection-v2"
   /**
    * Identifier of the asset (assetId)
@@ -81,7 +81,7 @@ export type BlockchainCollectionV2Asset = BaseBlockchainAsset & {
  * @public
  */
 export type OffChainAsset = {
-  namespace: 'decentraland'
+  namespace: 'telestoworld'
   uri: URL
   type: "off-chain"
   /**
@@ -97,7 +97,7 @@ export type OffChainAsset = {
 /**
  * @public
  */
-export type DecentralandAssetIdentifier =
+export type TelestoworldAssetIdentifier =
   | BlockchainAsset
   | OffChainAsset
   | BlockchainCollectionV1Asset

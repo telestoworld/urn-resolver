@@ -1,25 +1,25 @@
 {
-  "name": "@dcl/urn-resolver",
+  "name": "@tcl/urn-resolver",
   "version": "1.0.0",
-  "description": "URN resolver for Decentraland assets",
+  "description": "URN resolver for Telestoworld assets",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/decentraland/urn-resolver.git"
+    "url": "git+https://github.com/telestoworld/urn-resolver.git"
   },
   "keywords": [],
   "author": "",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/decentraland/urn-resolver/issues"
+    "url": "https://github.com/telestoworld/urn-resolver/issues"
   },
   "prettier": {
     "printWidth": 120,
     "semi": false
   },
-  "homepage": "https://github.com/decentraland/urn-resolver#readme",
+  "homepage": "https://github.com/telestoworld/urn-resolver#readme",
   "devDependencies": {
     "@microsoft/api-extractor": "^7.12.1",
     "@types/mocha": "^8.2.0",

@@ -1,20 +1,20 @@
-# `@dcl/urn-resolver`
+# `@tcl/urn-resolver`
 
-Resolves Asset URN for the `urn:decentraland` namespace following the definition of https://github.com/common-metaverse/urn-namespaces
+Resolves Asset URN for the `urn:telestoworld` namespace following the definition of https://github.com/common-metaverse/urn-namespaces
 
 ```bash
-npm i @dcl/urn-resolver
+npm i @tcl/urn-resolver
 ```
 
 ```typescript
-import { parseUrn } from '@dcl/urn-resolver'
+import { parseUrn } from '@tcl/urn-resolver'
 
-const parsed = await parseUrn("urn:decentraland:ropsten:LAND:-10,-13?atBlock=151231111")
+const parsed = await parseUrn("urn:telestoworld:ropsten:SPACE:-10,-13?atBlock=151231111")
 => {
   uri: URL {
-    href: 'urn:decentraland:ropsten:LAND:-10,-13?atBlock=151231111',
+    href: 'urn:telestoworld:ropsten:SPACE:-10,-13?atBlock=151231111',
     protocol: 'urn:',
-    pathname: 'decentraland:ropsten:LAND:-10,-13',
+    pathname: 'telestoworld:ropsten:SPACE:-10,-13',
     search: '?atBlock=151231111',
     searchParams: URLSearchParams { 'atBlock' => '151231111' },
   },
@@ -30,14 +30,14 @@ const parsed = await parseUrn("urn:decentraland:ropsten:LAND:-10,-13?atBlock=151
 
 # Registered routes
 
-- `decentraland:off-chain:{registry}:{name}`: Resolve static offchain assets (i.e. base wearables, not in any blockchain nor content server)
-- `decentraland:{protocol}:collections-v1:{contract(0x[a-fA-F0-9]+)}:{name}`: Resolve an ethereum wearables collection asset by contract address (v1)
-- `decentraland:{protocol}:collections-v1:{collection-name}:{name}`: Resolve an ethereum wearables collection asset by collection name (wearables API) (v1)
-- `decentraland:{protocol}:collections-v2:{contract(0x[a-fA-F0-9]+)}:{id}`: Resolve an ethereum wearables collection asset by contract address (v2)
-- `decentraland:{protocol}:LAND:{x},{y}`: Resolves the ethereum asset of a LAND position.
-- `decentraland:{protocol}:LAND:{tokenId}`: Resolves the ethereum asset of a LAND by tokenId.
+- `telestoworld:off-chain:{registry}:{name}`: Resolve static offchain assets (i.e. base wearables, not in any blockchain nor content server)
+- `telestoworld:{protocol}:collections-v1:{contract(0x[a-fA-F0-9]+)}:{name}`: Resolve an ethereum wearables collection asset by contract address (v1)
+- `telestoworld:{protocol}:collections-v1:{collection-name}:{name}`: Resolve an ethereum wearables collection asset by collection name (wearables API) (v1)
+- `telestoworld:{protocol}:collections-v2:{contract(0x[a-fA-F0-9]+)}:{id}`: Resolve an ethereum wearables collection asset by contract address (v2)
+- `telestoworld:{protocol}:SPACE:{x},{y}`: Resolves the ethereum asset of a SPACE position.
+- `telestoworld:{protocol}:SPACE:{tokenId}`: Resolves the ethereum asset of a SPACE by tokenId.
 
-# DecentralandAssetIdentifier
+# TelestoworldAssetIdentifier
 
 It is an union type defined in the file [src/types.ts](src/types.ts), in that file you can find all the possible return types for URN resolution in this package.
 

@@ -25,7 +25,7 @@ for (let network in contracts) {
 rawCollectionsV1.forEach((collection) => {
   collections.push({
     contractAddress: collection.id,
-    collectionId: collection.name.replace(/^dcl:\/\//, ""),
+    collectionId: collection.name.replace(/^tcl:\/\//, ""),
   })
 })
 

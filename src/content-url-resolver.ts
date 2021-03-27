@@ -1,6 +1,6 @@
 import { getContract } from "./helpers"
 import { LandUtils } from "./land-utils"
-import { DecentralandAssetIdentifier } from "./types"
+import { TelestoworldAssetIdentifier } from "./types"
 
 /**
  * @public
@@ -11,7 +11,7 @@ export type ResolversOptions = Partial<{
 }>
 
 type ResolverFunction = (
-  asset: DecentralandAssetIdentifier,
+  asset: TelestoworldAssetIdentifier,
   config: ResolversOptions
 ) => string | Promise<string | void> | void
 
@@ -23,7 +23,7 @@ const resolvers: ResolverFunction[] = []
  * @public
  */
 export async function resolveContentUrl(
-  asset: DecentralandAssetIdentifier,
+  asset: TelestoworldAssetIdentifier,
   config?: ResolversOptions
 ): Promise<string | null> {
   if (!asset) return null
@@ -41,7 +41,7 @@ export async function resolveContentUrl(
 
 resolvers.push(function resolvePortableExperiencesUrl(asset, options) {
   if (asset.type == "off-chain" && asset.registry == "static-portable-experiences") {
-    return `https://static-pe.decentraland.io/${asset.id}/mappings`
+    return `https://static-pe.telestoworld.io/${asset.id}/mappings`
   }
 })
 
@@ -64,7 +64,7 @@ resolvers.push(function wearablesV1UrlResolver(asset, options) {
 resolvers.push(async function landResolver(asset, options) {
   if (
     asset.type == "blockchain-asset" &&
-    asset.contractAddress.toLowerCase() == (await getContract(asset.network, "LANDProxy"))
+    asset.contractAddress.toLowerCase() == (await getContract(asset.network, "SPACEProxy"))
   ) {
     const host = defaultContentServerForNetwork(asset.network, options)
     const { x, y } = LandUtils.decodeTokenId(asset.id)
@@ -75,15 +75,15 @@ resolvers.push(async function landResolver(asset, options) {
 function defaultContentServerForNetwork(network: string, options: ResolversOptions) {
   if (options.contentServerHost) return options.contentServerHost
   if (network == "ropsten") {
-    return `peer.decentraland.zone`
+    return `peer.telestoworld.zone`
   }
-  return `peer.decentraland.org`
+  return `peer.telestoworld.org`
 }
 
 function defaultWearablesServerForNetwork(network: string, options: ResolversOptions) {
   if (options.wearablesServerHost) return options.wearablesServerHost
   if (network == "ropsten") {
-    return `wearable-api.decentraland.zone`
+    return `wearable-api.telestoworld.zone`
   }
-  return `wearable-api.decentraland.org`
+  return `wearable-api.telestoworld.org`
 }

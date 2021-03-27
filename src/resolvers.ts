@@ -6,26 +6,26 @@ import {
   BlockchainCollectionV1Asset,
   BlockchainCollectionV2Asset,
   BlockchainLandAsset,
-  DecentralandAssetIdentifier,
+  TelestoworldAssetIdentifier,
 } from "./types"
 
 /**
  * Ordered map of resolvers.
  * @public
  */
-export const resolvers: RouteMap<DecentralandAssetIdentifier> = {
+export const resolvers: RouteMap<TelestoworldAssetIdentifier> = {
   // Resolver for static offchain assets (quests deployed to static servers, not content server)
-  "decentraland:off-chain:{registry}:{name}": resolveOffchainAsset,
+  "telestoworld:off-chain:{registry}:{name}": resolveOffchainAsset,
   // collections v1 (by contract)
-  "decentraland:{protocol}:collections-v1:{contract(0x[a-fA-F0-9]+)}:{name}": resolveCollectionV1Asset,
+  "telestoworld:{protocol}:collections-v1:{contract(0x[a-fA-F0-9]+)}:{name}": resolveCollectionV1Asset,
   // collections v1 (by name)
-  "decentraland:{protocol}:collections-v1:{collectionName}:{name}": resolveCollectionV1AssetByCollectionName,
+  "telestoworld:{protocol}:collections-v1:{collectionName}:{name}": resolveCollectionV1AssetByCollectionName,
   // collections v2 (hex)
-  "decentraland:{protocol}:collections-v2:{contract(0x[a-fA-F0-9]+)}:{id(0x[a-fA-F0-9]+)}": resolveCollectionV2Asset,
+  "telestoworld:{protocol}:collections-v2:{contract(0x[a-fA-F0-9]+)}:{id(0x[a-fA-F0-9]+)}": resolveCollectionV2Asset,
   // collections v2 (id)
-  "decentraland:{protocol}:collections-v2:{contract(0x[a-fA-F0-9]+)}:{id([0-9]+)}": resolveCollectionV2Asset,
-  // resolve LAND by position
-  "decentraland:{protocol}:LAND:{position}": resolveLandAsset,
+  "telestoworld:{protocol}:collections-v2:{contract(0x[a-fA-F0-9]+)}:{id([0-9]+)}": resolveCollectionV2Asset,
+  // resolve SPACE by position
+  "telestoworld:{protocol}:SPACE:{position}": resolveLandAsset,
 }
 
 export const internalResolver = createParser(resolvers)
@@ -70,7 +70,7 @@ export async function resolveLegacyDclUrl(uri: URL) {
   let host: string
   let path: string[]
   if (uri.pathname.startsWith('//')) {
-    // Web URL object does not recognize dcl:// and therefore pathname has an extra /
+    // Web URL object does not recognize tcl:// and therefore pathname has an extra /
     let res = uri.pathname.replace(/^\/\//, "").split("/")
     host = res[0]
     path = res.slice(1)
@@ -79,11 +79,11 @@ export async function resolveLegacyDclUrl(uri: URL) {
     path = uri.pathname.replace(/^\//, "").split("/")
   }
 
-  if (uri.protocol == "dcl:" && path.length == 1) {
+  if (uri.protocol == "tcl:" && path.length == 1) {
     if (host == "base-avatars") {
-      return internalResolver(`urn:decentraland:off-chain:base-avatars:${path[0]}`)
+      return internalResolver(`urn:telestoworld:off-chain:base-avatars:${path[0]}`)
     } else {
-      return internalResolver(`urn:decentraland:ethereum:collections-v1:${host}:${path[0]}`)
+      return internalResolver(`urn:telestoworld:ethereum:collections-v1:${host}:${path[0]}`)
     }
   }
 }
@@ -98,7 +98,7 @@ export async function resolveEthereumAsset(
 
   if (contract)
     return {
-      namespace: "decentraland",
+      namespace: "telestoworld",
       uri,
       blockchain: "ethereum",
       type: "blockchain-asset",
@@ -113,7 +113,7 @@ export async function resolveOffchainAsset(
   groups: Record<"name" | "registry", string>
 ): Promise<OffChainAsset | void> {
   return {
-    namespace: "decentraland",
+    namespace: "telestoworld",
     uri,
     type: "off-chain",
     registry: groups.registry,
@@ -131,7 +131,7 @@ export async function resolveCollectionV1AssetByCollectionName(
   const collection = await getCollection(groups.collectionName)
 
   return {
-    namespace: "decentraland",
+    namespace: "telestoworld",
     uri,
     blockchain: "ethereum",
     type: "blockchain-collection-v1",
@@ -154,7 +154,7 @@ export async function resolveCollectionV1Asset(
     const collection = await getCollection(contract)
 
     return {
-      namespace: "decentraland",
+      namespace: "telestoworld",
       uri,
       blockchain: "ethereum",
       type: "blockchain-collection-v1",
@@ -176,7 +176,7 @@ export async function resolveCollectionV2Asset(
 
   if (contract)
     return {
-      namespace: "decentraland",
+      namespace: "telestoworld",
       uri,
       blockchain: "ethereum",
       type: "blockchain-collection-v2",
