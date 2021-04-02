@@ -1,5 +1,5 @@
 {
-  "name": "tcl-urn-resolver",
+  "name": "tw-urn-resolver",
   "version": "1.0.0",
   "description": "URN resolver for Telestoworld assets",
   "main": "dist/index.js",
