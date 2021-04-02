@@ -3,7 +3,7 @@ export = (
 {
   "ropsten": {
     "PrivateNodeWallet": "0x62ba62ff92917edf8ac0386fa10e3b27950bce8d",
-    "MANAToken": "0x2a8fd99c19271f4f04b1b7b9c4f7cf264b626edb",
+    "TELOToken": "0x2a8fd99c19271f4f04b1b7b9c4f7cf264b626edb",
     "SPACERegistry": "0x255baf4096cb1723c00c4b4390a4b3028ecaa8ba",
     "SPACEProxy": "0x7a73483784ab79257bb11b96fd62a2c3ae4fb75b",
     "TerraformReserve": "0x4bc79175f1f6fded07f04aa1b4b0465ecff6f1b3",
@@ -18,10 +18,10 @@ export = (
     "RCNToken": "0x2f45b6fb2f28a73f110400386da31044b2e953d4",
     "KyberOracle": "0x4931d0621360187199de494a1469165079b31bfc",
     "TelestoworldInvite": "0x7557dfa02f3bd7d274851e3f627de2ed2ff390e8",
-    "EstateRegistry": "0x60e315992d5e62457215dd1e6a49d1ceb7983dfc",
-    "EstateProxy": "0x124bf28a423b2ca80b3846c3aa0eb944fe7ebb95",
+    "SectorRegistry": "0x60e315992d5e62457215dd1e6a49d1ceb7983dfc",
+    "SectorProxy": "0x124bf28a423b2ca80b3846c3aa0eb944fe7ebb95",
     "ERC721Bid": "0x250fa138c0a994799c7a49df3097dc71e37b3d6f",
-    "BidMANABurner": "0x01f43c3133b83086d4776027fbd152fa8a685fb4",
+    "BidTELOBurner": "0x01f43c3133b83086d4776027fbd152fa8a685fb4",
     "AvatarNameRegistry": "0xd127F8d9C736d91Acdee34645e0b4C9db7178160",
     "AvatarNameRegistryProxy": "0x2d794a7c956624fb93Eb3ff6E48D5b5d6dBA127b",
     "ExclusiveMasksCollection": "0x30ae57840b0e9b8ea55334083d53d80b2cfe80e0",
@@ -36,7 +36,7 @@ export = (
     "CollectionsV2Factory": "0x16d8bac5b67a6b782a9081377bec413bc5bb56a6"
   },
   "mainnet": {
-    "MANAToken": "0x0f5d2fb29fb7d3cfee444a200298f468908cc942",
+    "TELOToken": "0x0f5d2fb29fb7d3cfee444a200298f468908cc942",
     "SPACERegistry": "0xa57e126b341b18c262ad25b86bb4f65b5e2ade45",
     "SPACEProxy": "0xf87e31492faf9a91b02ee0deaad50d51d56d5d4d",
     "TerraformReserve": "0xcca95e580bbbd04851ebfb85f77fd46c9b91f11c",
@@ -54,11 +54,11 @@ export = (
     "EstateRegistry": "0x1784ef41af86e97f8d28afe95b573a24aeda966e",
     "EstateProxy": "0x959e104e1a4db6317fa58f8295f586e1a978c297",
     "SPACEAuction": "0x54b7a124b44054da3692dbc56b116a35c6a3e561",
-    "MANABurner": "0xadfeb1de7876fcabeaf87df5a6c566b70f970018",
+    "TELOBurner": "0xadfeb1de7876fcabeaf87df5a6c566b70f970018",
     "MultiSigWallet": "0x4eac6325e1dbf1ac90434d39766e164dca71139e",
     "Nobody": "0xDf861993Edbe95BAFbfA7760838f8ebbd5Afda9F",
     "ERC721Bid": "0xe479dfd9664c693b2e2992300930b00bfde08233",
-    "BidMANABurner": "0x0fcf114c63a5387878e0da051c81cb6febd93b6c",
+    "BidTELOBurner": "0x0fcf114c63a5387878e0da051c81cb6febd93b6c",
     "MultisigContractOwner": "0xefc549434a03756f6e37a43757a2927605d8839b",
     "AvatarNameRegistry": "0x894b883905bfEe2CC448880F1b59f4A762E67566",
     "AvatarNameRegistryProxy": "0xcd816354450015A5644857FEd507afEeaE7263af",
@@ -125,34 +125,34 @@ export = (
     "WinklevossCapital": "0xc82a864a94db3550bc71fcb4ce07228bcec21f1a"
   },
   "kovan": {
-    "MANAToken": "0x230fc362413d9e862326c2c7084610a5a2fdf78a",
+    "TELOToken": "0x230fc362413d9e862326c2c7084610a5a2fdf78a",
     "SPACERegistry": "0x2059291430b9aa2F79547f657816eFb816b36614",
     "SPACEProxy": "0x537263c440943f6a6808bCb8CcB3fe03EE838aD1",
     "Marketplace": "0x6f44f195999f06aeb5872db96cdc517f1e839f13"
   },
   "rinkeby": {
-      "MANAToken": "0x28bce5263f5d7f4eb7e8c6d5d78275ca455bac63",
+      "TELOToken": "0x28bce5263f5d7f4eb7e8c6d5d78275ca455bac63",
       "SPACEProxy": "0x28bef22df3e2040a4be64a9ca0e8b5ae2b91462d",
       "SPACERegistry": "0xbeea8bfb0e582be1c3fb464824e61c218ba0c1b1",
       "EstateRegistry":"0x3f0b58ad7a8b27d0e5573cd1ca7d456e2f6d4884",
       "Multisig": "0x0de35b8b47b129877e0efca24e294b61d7e7eee3",
-      "MANAMiniMeToken":"0xfb2712a1246f712b889692c7ce55fec25c06bc33",
+      "TELOMiniMeToken":"0xfb2712a1246f712b889692c7ce55fec25c06bc33",
       "SPACEMiniMeToken": "0x576c4577aAd561EA79acbd49215a0cC1473BfCCA",
       "EstateMiniMeToken": "0x2b98C125733035cDE09d311F988845808EE270E6"
   },
   "goerli": {
-    "MANAToken": "0xe7fDae84ACaba2A5Ba817B6E6D8A2d415DBFEdbe",
+    "TELOToken": "0xe7fDae84ACaba2A5Ba817B6E6D8A2d415DBFEdbe",
     "ERC20Predicate": "0xdD6596F2029e6233DEFfaCa316e6A95217d4Dc34",
     "RootChainManagerProxy": "0xbbd7cbfa79faee899eaf900f13c9065bf03b1a74",
     "RootChainProxy": "0x2890ba17efe978480615e330ecb65333b880928e"
   },
   "matic": {
-    "MANAToken": "0xA1c57f48F0Deb89f569dFbE6E2B7f46D33606fD4",
+    "TELOToken": "0xA1c57f48F0Deb89f569dFbE6E2B7f46D33606fD4",
     "ChildChainManagerProxy": "0xA6FA4fB5f76172d178d61B04b0ecd319C5d1C0aa"
   },
   "mumbai": {
     "MetaTxForwarder": "0xBF6755A83C0dCDBB2933A96EA778E00b717d7004",
-    "MANAToken": "0x882Da5967c435eA5cC6b09150d55E8304B838f45",
+    "TELOToken": "0x882Da5967c435eA5cC6b09150d55E8304B838f45",
     "ChildChainManagerProxy": "0xb5505a6d998549090530911180f38aC5130101c6"
   }
 }
