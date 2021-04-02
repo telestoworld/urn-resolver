@@ -1,13 +1,13 @@
-# `@tcl/urn-resolver`
+# `tw-urn-resolver`
 
 Resolves Asset URN for the `urn:telestoworld` namespace following the definition of https://github.com/common-metaverse/urn-namespaces
 
 ```bash
-npm i @tcl/urn-resolver
+npm i tw-urn-resolver
 ```
 
 ```typescript
-import { parseUrn } from '@tcl/urn-resolver'
+import { parseUrn } from 'tw-urn-resolver'
 
 const parsed = await parseUrn("urn:telestoworld:ropsten:SPACE:-10,-13?atBlock=151231111")
 => {
